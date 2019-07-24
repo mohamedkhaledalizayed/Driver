@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_nav_bus_reservation"
+        android:icon="@drawable/ic_directions_bus_black_24dp"
+        android:title="Bus" />
+
+    <item
+        android:id="@+id/bottom_nav_bus_ticket"
+        android:icon="@drawable/ic_schedule_black_24dp"
+        android:title="Schedule" />
+
+    <item
+        android:id="@+id/bottom_nav_bus_info"
+        android:icon="@drawable/ic_rv_hookup_black_24dp"
+        android:title="Buses on Route" />
+
+    <item
+        android:id="@+id/bottom_nav_bus_help"
+        android:icon="@drawable/ic_scanner_black_24dp"
+        android:title="Boarding" />
+
+</menu>
