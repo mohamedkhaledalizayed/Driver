@@ -34,8 +34,13 @@
     <string name="skip"><![CDATA[
 <u>Skip</u>
     ]]></string>
+
     <string name="forget_password"><![CDATA[
 <u>Forget Password!‬</u>
+    ]]></string>
+
+    <string name="trip_details"><![CDATA[
+<u> Trip Details</u>
     ]]></string>
 
     <string name="ic_bottom_nav_bus_reservation">My Bus</string>

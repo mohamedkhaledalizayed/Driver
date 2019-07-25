@@ -21,6 +21,7 @@ import driver.itgds.khadametdz.R;
 import driver.itgds.khadametdz.databinding.FragmentBoardingBinding;
 import driver.itgds.khadametdz.model.Seat;
 import driver.itgds.khadametdz.utils.AppUtils;
+import driver.itgds.khadametdz.view.activity.ScanningBareCodeActivity;
 import driver.itgds.khadametdz.view.adapter.SeatsAdapter;
 
 /**
@@ -51,6 +52,13 @@ public class BoardingFragment extends Fragment {
         binding.seatsRecycler.setItemAnimator(new DefaultItemAnimator());
         binding.seatsRecycler.setAdapter(mAdapter);
         fakeData();
+
+        binding.scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ScanningBareCodeActivity.class));
+            }
+        });
         return binding.getRoot() ;
     }
 

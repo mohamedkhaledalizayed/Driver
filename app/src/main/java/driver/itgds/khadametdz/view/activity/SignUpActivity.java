@@ -24,9 +24,5 @@ public class SignUpActivity extends AppCompatActivity {
         finish();
     }
 
-    public void sms(View view) {
-    }
 
-    public void email(View view) {
-    }
 }

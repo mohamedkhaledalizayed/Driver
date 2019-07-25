@@ -11,7 +11,6 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,28 +18,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.TripDetailsActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBUDv7W8-7Zyf85AlHfKKDejvgA7jp42i8" />
 
-        <activity android:name=".view.activity.NotificationActivity"></activity>
+        <activity android:name=".view.activity.NotificationActivity" />
         <activity android:name=".view.activity.EditProfileActivity" />
         <activity android:name=".view.activity.SettingsActivity" />
         <activity android:name=".view.activity.TermsActivity" />
         <activity android:name=".view.activity.HistoryActivity" />
         <activity android:name=".view.activity.ProfileActivity" />
-        <activity android:name=".view.activity.VerificationActivity"
-            android:theme="@style/FulScreenNoActionBar"/>
-        <activity android:name=".view.activity.ForgetPasswordActivity"
+        <activity
+            android:name=".view.activity.VerificationActivity"
             android:theme="@style/FulScreenNoActionBar" />
-        <activity android:name=".view.activity.WelcomeActivity"
-            android:theme="@style/FulScreenNoActionBar"/>
-        <activity android:name=".view.activity.SignUpActivity"
-            android:theme="@style/FulScreenNoActionBar"/>
-        <activity android:name=".view.activity.SignInActivity"
-            android:theme="@style/FulScreenNoActionBar"/>
-        <activity android:name=".view.activity.SplashActivity"
+        <activity
+            android:name=".view.activity.ForgetPasswordActivity"
+            android:theme="@style/FulScreenNoActionBar" />
+        <activity
+            android:name=".view.activity.WelcomeActivity"
+            android:theme="@style/FulScreenNoActionBar" />
+        <activity
+            android:name=".view.activity.SignUpActivity"
+            android:theme="@style/FulScreenNoActionBar" />
+        <activity
+            android:name=".view.activity.SignInActivity"
+            android:theme="@style/FulScreenNoActionBar" />
+        <activity
+            android:name=".view.activity.SplashActivity"
             android:theme="@style/FulScreenNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +54,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.MainActivity"
+        <activity
+            android:name=".view.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

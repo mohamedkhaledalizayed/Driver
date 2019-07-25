@@ -67,13 +67,13 @@ public class MainActivity extends AppCompatActivity implements
         toolbar = findViewById(R.id.custom_toolbar);
         title = findViewById(R.id.toolbar_title);
         notification = findViewById(R.id.notification);
-//        title.setText(getResources().getString(R.string.ic_bottom_nav_bus_reservation));
+        title.setText(getResources().getString(R.string.ic_bottom_nav_bus_reservation));
 
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_container, new BusFragment());
-//        transaction.commit();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, new BusFragment());
+        transaction.commit();
 
         drawer = findViewById(R.id.drawer_layout);
 
@@ -87,33 +87,12 @@ public class MainActivity extends AppCompatActivity implements
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,NotificationActivity.class));
+                startActivity(new Intent(MainActivity.this,NotificationActivity.class));
             }
         });
         toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
-//        location();
+
     }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    private DialogInterface.OnClickListener positiveEnableGPS = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialogInterface, int i) {
-            dialogInterface.dismiss();
-            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-        }
-    };
-
-    private DialogInterface.OnClickListener cancelDialog = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialogInterface, int i) {
-            dialogInterface.dismiss();
-        }
-    };
 
 
 //    public void showImage(View view) {

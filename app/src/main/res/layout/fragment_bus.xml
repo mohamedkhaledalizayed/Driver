@@ -1,136 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/_16sdp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragment.BusFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card"
+    <data>
+
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:cardCornerRadius="@dimen/_3sdp">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/id_bus_spinner_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".view.fragment.BusFragment">
 
-
-            <ImageView
-                android:id="@+id/from"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/ic_location_city_black_24dp" />
-
-            <TextView
-                android:id="@+id/id_spinner_source"
+            <android.support.v7.widget.CardView
+                android:id="@+id/card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_toEndOf="@+id/from"
-                android:text="From"
-                android:textAlignment="viewStart"
-                android:textSize="@dimen/_12ssp" />
+                android:orientation="vertical"
+                app:cardCornerRadius="@dimen/_3sdp">
+
+                <RelativeLayout
+                    android:id="@+id/id_bus_spinner_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp">
+
+
+                    <ImageView
+                        android:id="@+id/from"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_location_city_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/id_spinner_source"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/from"
+                        android:text="From"
+                        android:textAlignment="viewStart"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <LinearLayout
+                        android:id="@+id/divider"
+                        android:layout_width="@dimen/_209sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@+id/id_spinner_source"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="#ccc"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/map_values_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/id_spinner_source"
+                        android:layout_toEndOf="@+id/divider"
+                        android:src="@drawable/ic_import_export_black_24dp" />
+
+                    <ImageView
+                        android:id="@+id/to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_location_city_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/id_spinner_destination"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/to"
+                        android:text="To" />
+
+                    <TextView
+                        android:id="@+id/id_trip_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/id_spinner_destination"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_alignParentEnd="true"
+                        android:text="Trip Details" />
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <fragment
+                android:id="@+id/map"
+                android:layout_below="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="@dimen/_16sdp"
+                tools:context=".view.fragment.BusFragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment" />
 
             <LinearLayout
-                android:id="@+id/divider"
-                android:layout_width="@dimen/_209sdp"
-                android:layout_height="@dimen/_1sdp"
-                android:layout_below="@+id/id_spinner_source"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="#ccc"
-                android:orientation="vertical"></LinearLayout>
-
-            <ImageView
-                android:id="@+id/map_values_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/id_spinner_source"
-                android:layout_toEndOf="@+id/divider"
-                android:src="@drawable/ic_import_export_black_24dp" />
-
-            <ImageView
-                android:id="@+id/to"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/divider"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/ic_location_city_black_24dp" />
-
-            <TextView
-                android:id="@+id/id_spinner_destination"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/divider"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_toEndOf="@+id/to"
-                android:text="To" />
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/_16sdp">
 
-        </RelativeLayout>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/sign_in_bg"
+                    android:text="Start"
+                    android:textColor="@color/color_white" />
 
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/sign_in_bg"
+                    android:text="Stop"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:textColor="@color/color_white" />
 
-    </android.support.v7.widget.CardView>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/sign_in_bg"
+                    android:text="Arrived"
+                    android:textColor="@color/color_white" />
 
-    <fragment
-        android:id="@+id/map"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="@dimen/_16sdp"
-        tools:context=".view.fragment.BusFragment"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginTop="@dimen/_16sdp"
-        >
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_weight="1"
-            android:background="@drawable/sign_in_bg"
-            android:text="Start"
-            android:textColor="@color/color_white"
-            />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_weight="1"
-            android:background="@drawable/sign_in_bg"
-            android:text="Stop"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
-            android:textColor="@color/color_white"
-            />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_weight="1"
-            android:background="@drawable/sign_in_bg"
-            android:text="Arrived"
-            android:textColor="@color/color_white"
-            />
-
-    </LinearLayout>
-
-</LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</layout>

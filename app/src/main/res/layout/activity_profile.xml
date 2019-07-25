@@ -63,7 +63,7 @@
 
         <me.zhanghai.android.materialratingbar.MaterialRatingBar
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_25sdp"
             android:layout_gravity="center"
             android:stepSize="1"
             android:rating="4"
@@ -186,6 +186,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="@dimen/_4sdp"
             >
 
@@ -215,12 +217,23 @@
 
         </android.support.v7.widget.CardView>
 
+        <Button
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:text="Edit Profile"
+            android:onClick="editProfile"
+            android:textColor="@color/color_white"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/sign_in_bg"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="My Wallet"
             android:textSize="@dimen/_15ssp"
             android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_20sdp"
             android:textColor="@color/colorPrimary"
@@ -240,18 +253,15 @@
                 android:id="@+id/earning_today"
                 android:text="Earning Today : "
                 android:textSize="@dimen/_15ssp"
-                android:textColor="@color/colorPrimary"
                 android:layout_alignParentStart="true"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:id="@+id/earning_today_value"
-                android:text="Earning Today : "
+                android:text="152 $ "
                 android:textSize="@dimen/_15ssp"
-                android:textColor="@color/colorPrimary"
                 android:layout_alignParentEnd="true"
                 />
 
@@ -260,9 +270,8 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:id="@+id/earning_week"
-                android:text="Earning Today : "
+                android:text="Earning This Week : "
                 android:textSize="@dimen/_15ssp"
-                android:textColor="@color/colorPrimary"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/earning_today"
                 />
@@ -270,11 +279,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:id="@+id/earning_week_value"
-                android:text="Earning Today : "
+                android:text="845 $ "
                 android:textSize="@dimen/_15ssp"
-                android:textColor="@color/colorPrimary"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/earning_today_value"
                 />
@@ -284,9 +291,8 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:id="@+id/total"
-                android:text="Earning Today : "
+                android:text="Total Earning : "
                 android:textSize="@dimen/_15ssp"
-                android:textColor="@color/colorPrimary"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/earning_week"
                 />
@@ -294,11 +300,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:id="@+id/total_value"
-                android:text="Earning Today : "
+                android:text="1800 $ "
                 android:textSize="@dimen/_15ssp"
-                android:textColor="@color/colorPrimary"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/earning_week_value"
                 />
