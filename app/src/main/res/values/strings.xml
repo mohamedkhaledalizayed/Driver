@@ -43,7 +43,15 @@
 <u> Trip Details</u>
     ]]></string>
 
-    <string name="ic_bottom_nav_bus_reservation">My Bus</string>
+    <string name="accept"><![CDATA[
+<u> Accept</u>
+    ]]></string>
+
+    <string name="reject"><![CDATA[
+<u> Reject</u>
+    ]]></string>
+
+    <string name="ic_bottom_nav_bus_reservation">My Trips</string>
     <string name="ic_bottom_nav_bus_ticket">My Schedule</string>
     <string name="ic_bottom_nav_bus_info">Buses On Route</string>
     <string name="ic_bottom_nav_bus_help">Boarding</string>

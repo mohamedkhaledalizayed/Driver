@@ -19,6 +19,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -43,6 +44,7 @@ import com.nabinbhandari.android.permissions.Permissions;
 import java.util.ArrayList;
 
 import driver.itgds.khadametdz.R;
+import driver.itgds.khadametdz.view.dialog.AlertFragment;
 import driver.itgds.khadametdz.view.fragment.BoardingFragment;
 import driver.itgds.khadametdz.view.fragment.BusFragment;
 import driver.itgds.khadametdz.view.fragment.BusesOnRouteFragment;
@@ -95,12 +97,12 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-//    public void showImage(View view) {
-//        FragmentManager fm = getSupportFragmentManager();
-//        BusImageFragment editNameDialogFragment = new BusImageFragment();
-//        editNameDialogFragment.show(fm, "");
-//        editNameDialogFragment.setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth);
-//    }
+    public void showImage() {
+        FragmentManager fm = getSupportFragmentManager();
+        AlertFragment editNameDialogFragment = new AlertFragment();
+        editNameDialogFragment.show(fm, "");
+        editNameDialogFragment.setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth);
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -113,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements
 //
             case R.id.my_wallet:
 //                startActivity(new Intent(MainActivity.this, WalletActivity.class));
+                showImage();
                 break;
 
             case R.id.history:

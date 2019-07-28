@@ -69,7 +69,7 @@ public class SeatsAdapter extends RecyclerView.Adapter<SeatsAdapter.MyViewHolder
                 @Override
                 public void onClick(View v) {
                     if (seatList.get(position).isBooked()) {
-                        Toast.makeText(context, "This Ticket Booked", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(context, "This Ticket Booked", Toast.LENGTH_LONG).show();
                     } else if (seatList.get(position).isSelected()) {
                         seatList.get(position).setSelected(false);
                         holder.binding.seatNumber.setBackgroundResource(R.drawable.seat_bg);

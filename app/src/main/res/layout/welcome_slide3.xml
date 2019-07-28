@@ -5,11 +5,12 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Screen 3"
-        android:layout_gravity="center"
-        android:textAlignment="center"
+        android:layout_height="match_parent"
+        android:text="Screen 1"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
         android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
         />
 
 </LinearLayout>

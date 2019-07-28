@@ -30,10 +30,39 @@ public class BusFragment extends Fragment {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_bus, container, false);
         Utilities.setHtmlText(R.string.trip_details,binding.idTripDetails);
 
-        binding.idTripDetails.setOnClickListener(new View.OnClickListener() {
+        binding.card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), TripDetailsActivity.class));
+                Intent intent = new Intent(getActivity(), TripDetailsActivity.class);
+                intent.putExtra("status",1);
+                startActivity(intent);
+            }
+        });
+
+        binding.card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TripDetailsActivity.class);
+                intent.putExtra("status",2);
+                startActivity(intent);
+            }
+        });
+
+        binding.card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TripDetailsActivity.class);
+                intent.putExtra("status",3);
+                startActivity(intent);
+            }
+        });
+
+        binding.card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TripDetailsActivity.class);
+                intent.putExtra("status",4);
+                startActivity(intent);
             }
         });
         return binding.getRoot();

@@ -139,16 +139,17 @@
                     android:text="To" />
 
                 <TextView
+                    android:id="@+id/accept1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destination"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_toStartOf="@id/reject"
+                    android:layout_toStartOf="@id/reject1"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:text="Accept" />
 
                 <TextView
-                    android:id="@+id/reject"
+                    android:id="@+id/reject1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destination"
@@ -231,16 +232,17 @@
                     android:text="To" />
 
                 <TextView
+                    android:id="@+id/accept2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destinatio"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_toStartOf="@id/rejec"
+                    android:layout_toStartOf="@id/rejec2"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:text="Accept" />
 
                 <TextView
-                    android:id="@+id/rejec"
+                    android:id="@+id/rejec2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destinatio"

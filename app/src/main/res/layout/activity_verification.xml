@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@color/colorPrimary"
+        android:background="@color/color_white"
         tools:context=".view.activity.VerificationActivity">
 
         <LinearLayout
@@ -69,7 +69,7 @@
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginBottom="@dimen/_20sdp"
                     android:text="Dont received the code?"
-                    android:textColor="@color/color_white"
+                    android:textColor="#A7A7AA"
                     android:textSize="@dimen/_10ssp" />
 
                 <TextView

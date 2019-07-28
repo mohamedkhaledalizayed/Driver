@@ -4,7 +4,7 @@
     <item
         android:id="@+id/bottom_nav_bus_reservation"
         android:icon="@drawable/ic_directions_bus_black_24dp"
-        android:title="Bus" />
+        android:title="My Trips" />
 
     <item
         android:id="@+id/bottom_nav_bus_ticket"
@@ -14,7 +14,7 @@
     <item
         android:id="@+id/bottom_nav_bus_info"
         android:icon="@drawable/ic_rv_hookup_black_24dp"
-        android:title="Buses on Route" />
+        android:title="Shift Driver" />
 
     <item
         android:id="@+id/bottom_nav_bus_help"
