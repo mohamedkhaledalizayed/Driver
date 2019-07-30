@@ -14,7 +14,7 @@
     <item
         android:id="@+id/bottom_nav_bus_info"
         android:icon="@drawable/ic_rv_hookup_black_24dp"
-        android:title="Shift Driver" />
+        android:title="Buses On Route" />
 
     <item
         android:id="@+id/bottom_nav_bus_help"

@@ -37,16 +37,18 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_weight="1"
-                android:background="@drawable/sign_in_bg"
+                android:background="@drawable/seat_bg_booked"
                 android:text="Daily"
+                android:id="@+id/daily"
                 android:textColor="@color/color_white" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_weight="1"
-                android:background="@drawable/sign_in_bg"
+                android:background="@drawable/seat_bg_selected"
                 android:text="Weekly"
+                android:id="@+id/weekly"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
                 android:textColor="@color/color_white" />
@@ -55,8 +57,9 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_weight="1"
-                android:background="@drawable/sign_in_bg"
-                android:text="Calender"
+                android:background="@drawable/seat_bg_selected"
+                android:text="Monthly"
+                android:id="@+id/monthly"
                 android:textColor="@color/color_white" />
 
         </LinearLayout>
@@ -65,6 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Calender 10/07/19"
+            android:id="@+id/date"
             android:layout_marginTop="@dimen/_20sdp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
@@ -144,6 +148,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destination"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
                     android:layout_toStartOf="@id/reject1"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:text="Accept" />
@@ -154,6 +160,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destination"
                     android:layout_marginStart="@dimen/_5sdp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Reject" />
@@ -237,6 +245,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destinatio"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
                     android:layout_toStartOf="@id/rejec2"
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:text="Accept" />
@@ -247,6 +257,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_spinner_destinatio"
                     android:layout_marginStart="@dimen/_5sdp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Reject" />

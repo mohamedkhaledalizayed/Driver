@@ -1,312 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_white"
-        android:orientation="vertical"
-        android:padding="@dimen/_10sdp"
-        tools:context=".view.activity.ProfileActivity">
-
-
-        <FrameLayout
-            android:layout_width="@dimen/_90sdp"
-            android:layout_height="@dimen/_90sdp"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_30sdp">
-
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/user_photo"
-                android:layout_width="@dimen/_90sdp"
-                android:layout_height="@dimen/_90sdp"
-                android:layout_gravity="center"
-                android:fitsSystemWindows="true"
-                android:onClick="editPhoto"
-                android:scaleType="centerCrop"
-                android:src="@drawable/man"
-                app:layout_collapseMode="parallax" />
-
-
-            <ImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_gravity="end"
-                android:background="@drawable/canceled_bg"
-                android:onClick="editPhoto"
-                android:padding="4dp"
-                android:src="@drawable/ic_edit_black_24dp" />
-
-        </FrameLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Mohamed"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_12ssp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="4.0"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:textColor="@color/colorAccent"
-            android:textSize="@dimen/_18ssp"
-            android:textStyle="bold"/>
-
-        <me.zhanghai.android.materialratingbar.MaterialRatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_gravity="center"
-            android:stepSize="1"
-            android:rating="4"
-            android:progressTint="#FFC107"
-            />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_marginTop="@dimen/_20sdp"
-            >
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            tools:context=".view.activity.ProfileActivity">
+
+
+            <FrameLayout
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_30sdp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_photo"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_gravity="center"
+                    android:fitsSystemWindows="true"
+                    android:onClick="editPhoto"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/man"
+                    app:layout_collapseMode="parallax" />
+
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/canceled_bg"
+                    android:onClick="editPhoto"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_edit_black_24dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Mohamed"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="4.0"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold"/>
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:stepSize="1"
+                android:rating="4"
+                android:progressTint="#FFC107"
+                />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/_20sdp"
                 >
 
-                <TextView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:text="321"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:background="@drawable/profile_rating_bg"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_12ssp"
-                    android:textColor="@color/color_white"
-                    android:paddingTop="@dimen/_5sdp"
-                    android:paddingBottom="@dimen/_5sdp"
-                    android:paddingStart="@dimen/_2sdp"
-                    android:paddingEnd="@dimen/_2sdp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Total km"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_marginTop="@dimen/_6sdp"
-                    />
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="321"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:background="@drawable/profile_rating_bg"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="@color/color_white"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:paddingStart="@dimen/_2sdp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total km"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="321"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:background="@drawable/profile_rating_bg"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="@color/color_white"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:paddingStart="@dimen/_2sdp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Driving Hours"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:text="321"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:background="@drawable/profile_rating_bg"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_12ssp"
+                        android:textColor="@color/color_white"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:paddingStart="@dimen/_2sdp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Job Per Month"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:elevation="@dimen/_4sdp"
                 >
 
-                <TextView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:text="321"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:background="@drawable/profile_rating_bg"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_12ssp"
-                    android:textColor="@color/color_white"
-                    android:paddingTop="@dimen/_5sdp"
-                    android:paddingBottom="@dimen/_5sdp"
-                    android:paddingStart="@dimen/_2sdp"
-                    android:paddingEnd="@dimen/_2sdp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Driving Hours"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_marginTop="@dimen/_6sdp"
-                    />
+                    android:padding="@dimen/_10sdp"
+                    >
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Availability"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_alignParentStart="true"
+                        />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:text="Edit Profile"
+                android:onClick="editProfile"
+                android:textColor="@color/color_white"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/sign_in_bg"
+                />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:text="321"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:background="@drawable/profile_rating_bg"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_12ssp"
-                    android:textColor="@color/color_white"
-                    android:paddingTop="@dimen/_5sdp"
-                    android:paddingBottom="@dimen/_5sdp"
-                    android:paddingStart="@dimen/_2sdp"
-                    android:paddingEnd="@dimen/_2sdp"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Job Per Month"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_marginTop="@dimen/_6sdp"
-                    />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:elevation="@dimen/_4sdp"
-            >
+                android:text="My Wallet"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/colorPrimary"
+                android:layout_alignParentStart="true"
+                />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Availability"
-                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/earning_today"
+                    android:text="Earning Today : "
+                    android:textSize="@dimen/_12ssp"
                     android:layout_alignParentStart="true"
                     />
 
-                <Switch
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/earning_today_value"
+                    android:text="152 $ "
+                    android:textSize="@dimen/_12ssp"
                     android:layout_alignParentEnd="true"
                     />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:id="@+id/earning_week"
+                    android:text="Earning This Week : "
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/earning_today"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/earning_week_value"
+                    android:text="845 $ "
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/earning_today_value"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:id="@+id/total"
+                    android:text="Total Earning : "
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/earning_week"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/total_value"
+                    android:text="1800 $ "
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/earning_week_value"
+                    />
+
             </RelativeLayout>
+        </LinearLayout>
 
-        </android.support.v7.widget.CardView>
 
-        <Button
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_gravity="center"
-            android:text="Edit Profile"
-            android:onClick="editProfile"
-            android:textColor="@color/color_white"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@drawable/sign_in_bg"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My Wallet"
-            android:textSize="@dimen/_15ssp"
-            android:textStyle="bold"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:textColor="@color/colorPrimary"
-            android:layout_alignParentStart="true"
-            />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:id="@+id/earning_today"
-                android:text="Earning Today : "
-                android:textSize="@dimen/_15ssp"
-                android:layout_alignParentStart="true"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/earning_today_value"
-                android:text="152 $ "
-                android:textSize="@dimen/_15ssp"
-                android:layout_alignParentEnd="true"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:id="@+id/earning_week"
-                android:text="Earning This Week : "
-                android:textSize="@dimen/_15ssp"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/earning_today"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/earning_week_value"
-                android:text="845 $ "
-                android:textSize="@dimen/_15ssp"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/earning_today_value"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:id="@+id/total"
-                android:text="Total Earning : "
-                android:textSize="@dimen/_15ssp"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/earning_week"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/total_value"
-                android:text="1800 $ "
-                android:textSize="@dimen/_15ssp"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/earning_week_value"
-                />
-
-        </RelativeLayout>
-    </LinearLayout>
+    </ScrollView>
 </layout>

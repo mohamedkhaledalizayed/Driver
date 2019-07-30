@@ -104,6 +104,29 @@ We are always ready to help you.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="week">Week</string>
+    <string name="select_week">Select Week</string>
+    <string name="select_month">Select Month</string>
+    <string name="year">Year</string>
+    <string name="monthly">Monthly</string>
+    <string name="weekly">Weekly</string>
+    <string name="daily">Daily</string>
+    <string name="select_date">Select Date</string>
+    <string name="close">Close</string>
 
+    <string-array name="array_months">
+    <item>January</item>
+    <item>February</item>
+    <item>March</item>
+    <item>April</item>
+    <item>May</item>
+    <item>June</item>
+    <item>July</item>
+    <item>August</item>
+    <item>September</item>
+    <item>October</item>
+    <item>November</item>
+    <item>December</item>
+    </string-array>
 
 </resources>

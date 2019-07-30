@@ -6,15 +6,15 @@ import android.view.MenuItem;
 
 import driver.itgds.khadametdz.R;
 
-public class ShiftDriverActivity extends AppCompatActivity {
+public class TripRejectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shift_driver);
+        setContentView(R.layout.activity_trip_rejection);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Shift Driver");
+        getSupportActionBar().setTitle("Trip Reject");
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

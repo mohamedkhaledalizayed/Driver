@@ -1,13 +1,8 @@
 package driver.itgds.khadametdz.view.activity;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationManager;
-import android.provider.Settings;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -19,29 +14,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.crowdfire.cfalertdialog.CFAlertDialog;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.nabinbhandari.android.permissions.PermissionHandler;
-import com.nabinbhandari.android.permissions.Permissions;
-
-import java.util.ArrayList;
 
 import driver.itgds.khadametdz.R;
 import driver.itgds.khadametdz.view.dialog.AlertFragment;
@@ -54,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{
 
     private Toolbar toolbar;
-    private String pageNameString = "FragInfoPage";
     private BottomNavigationView navigation;
     private DrawerLayout drawer;
 
@@ -67,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.custom_toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setOverflowIcon(getResources().getDrawable(R.drawable.ic_more_vert));
         title = findViewById(R.id.toolbar_title);
         notification = findViewById(R.id.notification);
         title.setText(getResources().getString(R.string.ic_bottom_nav_bus_reservation));
@@ -112,11 +94,6 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.profile:
                 startActivity(new Intent(MainActivity.this,ProfileActivity.class));
                 break;
-//
-            case R.id.my_wallet:
-//                startActivity(new Intent(MainActivity.this, WalletActivity.class));
-                showImage();
-                break;
 
             case R.id.history:
                 startActivity(new Intent(MainActivity.this, HistoryActivity.class));
@@ -152,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -161,22 +139,18 @@ public class MainActivity extends AppCompatActivity implements
                 case R.id.bottom_nav_bus_reservation:
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_reservation));
                     loadFragment(new BusFragment());
-                    pageNameString = "FragReservationPage";
                     return true;
                 case R.id.bottom_nav_bus_ticket:
                     loadFragment(new ScheduleFragment());
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_ticket));
-                    pageNameString = "FragTicketPage";
                     return true;
                 case R.id.bottom_nav_bus_info:
                     loadFragment(new BusesOnRouteFragment());
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_info));
-                    pageNameString = "FragInfoPage";
                     return true;
                 case R.id.bottom_nav_bus_help:
                     loadFragment(new BoardingFragment());
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_help));
-                    pageNameString = "FragHelpPage";
                     return true;
             }
             return false;
@@ -212,26 +186,26 @@ public class MainActivity extends AppCompatActivity implements
         transaction.commit();
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.ic_profile:
-//                startActivity(new Intent(this, ProfileActivity.class));
-//                return true;
-//
-//            default:
+        switch (item.getItemId()) {
+            case R.id.alert:
+                showImage();
+                return true;
+            case R.id.shift_driver:
+                startActivity(new Intent(this, ShiftDriverActivity.class));
+                return true;
+            case R.id.bus_station:
+                startActivity(new Intent(this, ProfileActivity.class));
+                return true;
+
+            default:
                 return super.onOptionsItemSelected(item);
         }
+    }
 
     @Override
     public void onBackPressed() {
-//        if (pageNameString.equals("FragReservationPage")) {
-//            super.onBackPressed();
-//        } else {
-//            navigation.setSelectedItemId(R.id.bottom_nav_bus_reservation);
-//            pageNameString = "FragReservationPage";
-//        }
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

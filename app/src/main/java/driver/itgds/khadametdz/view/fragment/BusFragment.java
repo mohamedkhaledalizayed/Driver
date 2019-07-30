@@ -28,7 +28,6 @@ public class BusFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_bus, container, false);
-        Utilities.setHtmlText(R.string.trip_details,binding.idTripDetails);
 
         binding.card1.setOnClickListener(new View.OnClickListener() {
             @Override

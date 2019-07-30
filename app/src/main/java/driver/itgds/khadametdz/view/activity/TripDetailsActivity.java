@@ -29,6 +29,9 @@ public class TripDetailsActivity extends AppCompatActivity {
             binding.tripStatus.setText("Not Started");
         }else if (status == 3){
             binding.tripStatus.setText("Completed");
+            binding.start.setVisibility(View.GONE);
+            binding.stop.setVisibility(View.GONE);
+            binding.arrived.setVisibility(View.GONE);
         }else if (status == 4) {
             binding.tripStatus.setText("Canceled");
             binding.start.setVisibility(View.GONE);
