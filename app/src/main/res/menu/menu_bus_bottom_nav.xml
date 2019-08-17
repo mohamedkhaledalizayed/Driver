@@ -7,9 +7,9 @@
         android:title="My Trips" />
 
     <item
-        android:id="@+id/bottom_nav_bus_ticket"
-        android:icon="@drawable/ic_schedule_black_24dp"
-        android:title="Schedule" />
+        android:id="@+id/bottom_nav_bus_help"
+        android:icon="@drawable/ic_scanner_black_24dp"
+        android:title="Boarding" />
 
     <item
         android:id="@+id/bottom_nav_bus_info"
@@ -17,8 +17,8 @@
         android:title="Buses On Route" />
 
     <item
-        android:id="@+id/bottom_nav_bus_help"
-        android:icon="@drawable/ic_scanner_black_24dp"
-        android:title="Boarding" />
+        android:id="@+id/bottom_nav_bus_ticket"
+        android:icon="@drawable/ic_schedule_black_24dp"
+        android:title="Schedule" />
 
 </menu>

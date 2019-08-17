@@ -15,6 +15,16 @@
             android:orientation="vertical">
 
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/search_bg"
+                android:text="Scan Ticket Number 3"
+                android:id="@+id/scan"
+                android:textColor="#FFF"
+                android:layout_margin="@dimen/_16sdp"
+                />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/seat_booked"
                     android:layout_margin="@dimen/_5sdp"
-                    android:text="Booked Seats"
+                    android:text="Confirmed Seats"
                     android:layout_alignParentStart="true"
                     />
 
@@ -72,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/seat_selected"
                     android:layout_margin="@dimen/_5sdp"
-                    android:text="Selected Seats"
+                    android:text="Busy Seats"
                     android:layout_centerHorizontal="true"
                     />
 
@@ -97,15 +107,7 @@
 
             </RelativeLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_30sdp"
-                android:background="@drawable/search_bg"
-                android:text="Scan Ticket Number 3"
-                android:id="@+id/scan"
-                android:textColor="#FFF"
-                android:layout_margin="@dimen/_16sdp"
-                />
+
 
         </LinearLayout>
 

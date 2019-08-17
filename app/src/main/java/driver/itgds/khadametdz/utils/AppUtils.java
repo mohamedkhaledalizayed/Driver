@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.Settings;
 
 import com.crowdfire.cfalertdialog.CFAlertDialog;
 
@@ -48,22 +49,21 @@ public class AppUtils {
         builder.show();
     }
 
-    public static void dialog(final Context context, String title, String message, String fBtnName, String sBtnName){
+    public static void gps(final Context context, String title, String message){
         CFAlertDialog.Builder builder = new CFAlertDialog.Builder(context)
                 .setDialogStyle(CFAlertDialog.CFAlertStyle.ALERT)
                 .setTitle(title)
                 .setMessage(message)
-                .addButton(fBtnName, -1, -1, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, new DialogInterface.OnClickListener() {
+                .addButton("Ok", -1, -1, CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                         dialog.dismiss();
-//                        context.startActivity(new Intent(context, AddOfferActivity.class));
                     }
-                }).addButton(sBtnName, -1, -1, CFAlertDialog.CFAlertActionStyle.NEGATIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, new DialogInterface.OnClickListener() {
+                }).addButton("Cancel", -1, -1, CFAlertDialog.CFAlertActionStyle.NEGATIVE, CFAlertDialog.CFAlertActionAlignment.JUSTIFIED, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        dialog(context,"Delete","Are You Want To Delete Item !");
                     }
                 })
                 ;

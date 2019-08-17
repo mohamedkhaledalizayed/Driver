@@ -25,6 +25,12 @@
             android:icon="@drawable/ic_card_giftcard_black_24dp"/>
     </group>
 
+    <group android:id="@+id/feed">
+        <item android:title="FeedBack"
+            android:id="@+id/feedback"
+            android:icon="@drawable/ic_card_giftcard_black_24dp"/>
+    </group>
+
     <group android:id="@+id/past_trips_">
         <item android:title="Terms"
             android:id="@+id/terms"

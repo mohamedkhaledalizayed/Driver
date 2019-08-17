@@ -56,7 +56,6 @@ public class ProfileActivity extends AppCompatActivity {
 
                     @Override
                     public void onDenied(Context context, ArrayList<String> deniedPermissions) {
-                        Toast.makeText(ProfileActivity.this,"Permissions Denied",Toast.LENGTH_LONG).show();
                     }
                 }
 

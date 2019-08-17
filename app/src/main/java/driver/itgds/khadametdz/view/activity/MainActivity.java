@@ -1,7 +1,12 @@
 package driver.itgds.khadametdz.view.activity;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +21,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,8 +29,19 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.crowdfire.cfalertdialog.CFAlertDialog;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.nabinbhandari.android.permissions.PermissionHandler;
+import com.nabinbhandari.android.permissions.Permissions;
+
+import java.util.ArrayList;
 
 import driver.itgds.khadametdz.R;
+import driver.itgds.khadametdz.utils.AppUtils;
+import driver.itgds.khadametdz.utils.Utilities;
 import driver.itgds.khadametdz.view.dialog.AlertFragment;
 import driver.itgds.khadametdz.view.fragment.BoardingFragment;
 import driver.itgds.khadametdz.view.fragment.BusFragment;
@@ -34,6 +51,97 @@ import driver.itgds.khadametdz.view.fragment.ScheduleFragment;
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener{
 
+
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    private LocationCallback locationCallback;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        location();
+    }
+
+//    public void location() {
+//
+//        String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION};
+//
+//        Permissions.check(this/*context*/, permissions, null/*rationale*/, null/*options*/, new PermissionHandler() {
+//                    @Override
+//                    public void onGranted() {
+//                        // do your task.
+//                        sendCurrentLocation();
+//                    }
+//
+//                    @Override
+//                    public void onDenied(Context context, ArrayList<String> deniedPermissions) {
+////                        super.onDenied(context, deniedPermissions);
+//                        AppUtils.gps(this,"Enable GPS","Please Enable GPS To");
+//                    }
+//                }
+//
+//        );
+//    }
+
+    @SuppressLint("MissingPermission")
+    private void location() {
+
+        LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (manager != null) {
+            if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+
+                AppUtils.gps(this,"Enable GPS","Please Enable GPS To");
+            } else {
+                fusedLocationProviderClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        if (location != null) {
+
+
+                            Log.e("lat", location.getLatitude() + " : " + location.getLongitude());
+
+
+
+                        } else {
+                            requestLocationUpdates();
+                        }
+
+                    }
+                });
+            }
+        } else
+            Utilities.showShortToast(this, "something_went_wrong");
+
+    }
+
+
+    @SuppressLint("MissingPermission")
+    private void requestLocationUpdates() {
+        LocationRequest locationRequest = LocationRequest.create();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(20000);
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                if (locationResult == null) {
+                    return;
+                }
+                for (Location location : locationResult.getLocations()) {
+                    if (location != null) {
+
+
+                        Log.e("lat", location.getLatitude() + " : " + location.getLongitude());
+
+
+                        if (fusedLocationProviderClient != null)
+                            fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+
+                    }
+                }
+            }
+        };
+
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
+    }
     private Toolbar toolbar;
     private BottomNavigationView navigation;
     private DrawerLayout drawer;
@@ -103,6 +211,10 @@ public class MainActivity extends AppCompatActivity implements
                 startActivity(new Intent(MainActivity.this, NotificationActivity.class));
                 break;
 
+            case R.id.feedback:
+                startActivity(new Intent(MainActivity.this, FeedBackActivity.class));
+                break;
+
             case R.id.settings:
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                 break;
@@ -137,18 +249,22 @@ public class MainActivity extends AppCompatActivity implements
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.bottom_nav_bus_reservation:
+                    location();
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_reservation));
                     loadFragment(new BusFragment());
                     return true;
                 case R.id.bottom_nav_bus_ticket:
+                    location();
                     loadFragment(new ScheduleFragment());
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_ticket));
                     return true;
                 case R.id.bottom_nav_bus_info:
+                    location();
                     loadFragment(new BusesOnRouteFragment());
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_info));
                     return true;
                 case R.id.bottom_nav_bus_help:
+                    location();
                     loadFragment(new BoardingFragment());
                     title.setText(getResources().getString(R.string.ic_bottom_nav_bus_help));
                     return true;

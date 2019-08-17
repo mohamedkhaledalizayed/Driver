@@ -84,7 +84,7 @@ public class ScheduleFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 binding.date.setText(format2.format(currentDate));
-                binding.daily.setBackgroundResource(R.drawable.seat_bg_selected);
+                binding.daily.setBackgroundResource(R.drawable.seat_bg_booked);
                 binding.weekly.setBackgroundResource(R.drawable.seat_bg_selected);
                 binding.monthly.setBackgroundResource(R.drawable.seat_bg_selected);
             }
